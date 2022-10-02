@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :images, only: %i[index show]
       get 'verify', to: 'images#verify_coordinates'
+      post 'scores', to: 'scores#create'
     end
   end
 end

@@ -2,7 +2,7 @@ class Api::V1::ImagesController < ApplicationController
   
   def index
     @images = Image.all
-    render json: ImageSerializer.new(@images, fields: { image: %i[id title thumbnail_url] }).serializable_hash[:data]
+    render json: ImageSerializer.new(@images, fields: { image: %i[id title thumbnail_url best_score] }).serializable_hash[:data]
   end
 
   def show
